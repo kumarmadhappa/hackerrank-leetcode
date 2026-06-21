@@ -10,12 +10,14 @@ public class MinSubArraySum {
 
         for(int right=0 ; right<nums.length; right++){
             sum+=nums[right];
-            while (sum>=target){
-                min = Math.min(min, right-left+1);
+            while(sum>=target){
+                if(sum==target){
+                    min = Math.min(min, right-left+1 );
+                }
                 sum-=nums[left++];
             }
-        }
 
+        }
         return min==Integer.MAX_VALUE ? 0 : min;
     }
 
@@ -23,5 +25,6 @@ public class MinSubArraySum {
         MinSubArraySum m = new MinSubArraySum();
         System.out.println(m.minSubArrayLen(7, new int[]{2,3,1,2,4,3}));
         System.out.println(m.minSubArrayLen(4, new int[]{1,4,4}));
+        System.out.println(m.minSubArrayLen(4, new int[]{8,1,2,1,4,4}));
     }
 }
