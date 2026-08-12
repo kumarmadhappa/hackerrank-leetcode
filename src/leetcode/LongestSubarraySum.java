@@ -6,7 +6,7 @@ public class LongestSubarraySum {
 
     public int bruteForce(int target, int[] nums) {
         int n = nums.length;
-        int max = Integer.MIN_VALUE;
+        int max = 0;
 
         for(int i=0;i<n;i++) {
             int sum = nums[i];
@@ -23,12 +23,12 @@ public class LongestSubarraySum {
             }
         }
 
-        return max==Integer.MIN_VALUE ? 0: max;
+        return max;
     }
 
     public int twoPointer(int target, int[] nums) {
         int n = nums.length;
-        int max = Integer.MIN_VALUE;
+        int max = 0;
 
         int left = 0;
         int sum = 0;        // {1,3,1,5,2,1,1,1} 5
@@ -43,7 +43,7 @@ public class LongestSubarraySum {
 
         }
 
-        return max==Integer.MIN_VALUE?0:max;
+        return max;
     }
 
 

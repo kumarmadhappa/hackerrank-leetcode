@@ -1,7 +1,7 @@
 package leetcode;
 
 public class FindMinInRotatedArray {
-//LeetCode problem 153
+//LeetCode problem 153 no duplicates
     /**
      * Example 2:
 
@@ -18,7 +18,7 @@ public class FindMinInRotatedArray {
 
         while (l < r) {
             int mid = (l+r)/2;
-            if(nums[mid]>nums[r] || nums[mid]==nums[r]){
+            if(nums[mid]>nums[r]){
                 l=mid+1;
             }
             else{
@@ -32,9 +32,12 @@ public class FindMinInRotatedArray {
 
     public static void main(String[] args) {
         FindMinInRotatedArray find =  new FindMinInRotatedArray();
-        //System.out.println(find.findMin(new int[]{3,4,5,1,2}));
-        //System.out.println(find.findMin(new int[]{4,5,6,7,0,1,2}));
+        System.out.println(find.findMin(new int[]{3,4,5,1,2}));
+        System.out.println(find.findMin(new int[]{4,5,6,7,0,1,2}));
+        System.out.println(find.findMin(new int[]{5,6,7,0,1,2,4}));
+        System.out.println(find.findMin(new int[]{0,1,2,4,5,6,7}));
+        System.out.println(find.findMin(new int[]{1,2,4,5,6,7,0}));
         //System.out.println(find.findMin(new int[]{3,3,1,3}));
-        System.out.println(find.findMin(new int[]{1,3,3}));
+        //System.out.println(find.findMin(new int[]{1,3,3}));// duplicates will not work
     }
 }
