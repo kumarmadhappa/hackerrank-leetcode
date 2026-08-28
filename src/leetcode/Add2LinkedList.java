@@ -17,7 +17,6 @@ public class Add2LinkedList {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         ListNode res = new ListNode(0);
-        ListNode res_head = res;
         addNodeSum(l1, l2, res);
 
         return res;
